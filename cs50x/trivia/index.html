@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Function for a multiple-choice question.
+            function changeColor(color, number)
+            {
+                document.getElementById(number).style.backgroundColor = color;
+                if (number == 3)
+                {
+                    document.getElementById("result").innerHTML = "Correct!";
+                }
+                else
+                {
+                    document.getElementById("result").innerHTML = "Incorrect";
+                };
+
+            };
+
+            // Function for a text-based free response question.
+            function answer()
+            {
+                let country = document.querySelector('#f2').value.toLowerCase();
+                if (country == 'china')
+                {
+                    document.getElementById("result2").innerHTML = "Correct!";
+                    document.getElementById("f2").style.backgroundColor = "green";
+                }
+                else
+                {
+                    document.getElementById("result2").innerHTML = "Incorrect";
+                    document.getElementById("f2").style.backgroundColor = "red";
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- Multiple choice question here -->
+                <h3>How long (in miles) is Mississippi river?</h3>
+
+                <button onclick="changeColor('red', 1);" id="1";>Less then 1,000</button>
+                <button onclick="changeColor('red', 2);" id="2";>1,570</button>
+                <button onclick="changeColor('green', 3);" id="3";>2,340</button>
+                <button onclick="changeColor('red', 4);" id="4";>3,620</button>
+                <button onclick="changeColor('red', 5);" id="5";>More then 4,000</button>
+                <h3 id="result"></h3>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Free response question here -->
+                <h3>Which country is owner of panda?</h3>
+                <form onsubmit="answer(); return false;">
+                    <input autocomplete="off" autofocus id="f2" placeholder="Answer" type="text">
+                    <button type="submit">Check Answer</button>
+                </form>
+                <h3 id="result2"></h3>
+            </div>
+        </div>
+    </body>
+</html>

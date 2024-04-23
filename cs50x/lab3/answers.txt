@@ -1,0 +1,36 @@
+sort1 uses: bubble sort
+
+How do you know?:
+
+                Table 1
+=======================================
+   sort   | worst-case |   best-case
+=======================================
+bubble    | O(n^2)     | Omega(n)
+merge     | O(n log n) | Omega(n log n)
+selection | O(n^2)     | Omega(n^2)
+
+
+                                     Table 2
+===================================================================================
+ sort ||                               time in seconds
+      ||                        ||                        ||
+      ||         random         ||        reversed        ||         sorted
+      || 5000  | 10000 | 50000  || 5000  | 10000 | 50000  || 5000  | 10000 | 50000
+===================================================================================
+sort1 || 0.164 | 0.437 | 16.538 || 0.064 | 0.400 | 12.611 || 0.018 | 0.453 |  5.568
+sort2 || 0.013 | 0.022 |  4.470 || 0.011 | 0.025 |  4.515 || 0.015 | 0.065 |  4.123
+sort3 || 0.044 | 0.230 |  9.254 || 0.037 | 0.246 | 11.431 || 0.039 | 0.236 | 12.674
+
+For the purposes of this lab we will use two tables.
+The first one contains performance of each algorithm and the second one contains empirical data for all possible cases.
+Bubble sort behaves much faster for sorted data (best case), so bubble sort is sort1.
+
+sort2 uses: merge sort
+
+How do you know?: Merge sort behaves much more faster than another two for all types of data, so merge sort is sort2.
+
+sort3 uses: selection sort
+
+How do you know?: Selection sort behaves in a similar way for both worst and best cases (and for random case too),
+so selection sort is the sort3.
