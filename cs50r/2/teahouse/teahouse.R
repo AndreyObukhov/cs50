@@ -1,0 +1,20 @@
+flavor <- readline("Flavor: ")
+caffeine <- readline("Caffeine: ")
+if (flavor == "Light" & caffeine == "Yes") {
+  cat("You might like green tea 🫖", "\n")
+}
+if (flavor == "Light" & caffeine == "No") {
+  cat("You might like chamomile tea 🫖", "\n")
+}
+if (flavor == "Bold" & caffeine == "Yes") {
+  cat("You might like black tea 🫖", "\n")
+}
+if (flavor == "Bold" & caffeine == "No") {
+  cat("You might like rooibos tea 🫖", "\n")
+}
+if (flavor != "Bold" & flavor != "Light") {
+  cat("Enter either 'Light' or 'Bold' for flavor", "\n")
+}
+if (caffeine != "Yes" & caffeine != "No") {
+  cat("Enter either 'No' or 'Yes' for caffeine", "\n")
+}

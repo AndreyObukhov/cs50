@@ -1,0 +1,7 @@
+table_name <- readline("Enter table name in format '*.csv' ")
+data <- read.csv(table_name)
+# View(data)
+print(nrow(data))
+print(min(data$time))
+print(max(data$time))
+print(sum(data$time))
